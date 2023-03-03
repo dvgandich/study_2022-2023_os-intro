@@ -1,8 +1,8 @@
 ---
 ## Front matter
-title: "Шаблон отчёта по лабораторной работе"
-subtitle: "Простейший вариант"
-author: "Дмитрий Сергеевич Кулябов"
+title: "Отчёта по лабораторной работе №4."
+subtitle: "Основы интерфейса взаимодействия пользователя с системой Unix на уровне командной строки"
+author: " Гандич Дарья Владимировна. НБИбд-02-22."
 
 ## Generic otions
 lang: ru-RU
@@ -23,12 +23,12 @@ papersize: a4
 documentclass: scrreprt
 ## I18n polyglossia
 polyglossia-lang:
-  name: russian
-  options:
-	- spelling=modern
-	- babelshorthands=true
+ name: russian
+ options:
+ - spelling=modern
+ - babelshorthands=true
 polyglossia-otherlangs:
-  name: english
+ name: english
 ## I18n babel
 babel-lang: russian
 babel-otherlangs: english
@@ -45,75 +45,72 @@ monofontoptions: Scale=MatchLowercase,Scale=0.9
 biblatex: true
 biblio-style: "gost-numeric"
 biblatexoptions:
-  - parentracker=true
-  - backend=biber
-  - hyperref=auto
-  - language=auto
-  - autolang=other*
-  - citestyle=gost-numeric
+ - parentracker=true
+ - backend=biber
+ - hyperref=auto
+ - language=auto
+ - autolang=other*
+ - citestyle=gost-numeric
 ## Pandoc-crossref LaTeX customization
 figureTitle: "Рис."
 tableTitle: "Таблица"
 listingTitle: "Листинг"
 lofTitle: "Список иллюстраций"
-lotTitle: "Список таблиц"
 lolTitle: "Листинги"
 ## Misc options
 indent: true
 header-includes:
-  - \usepackage{indentfirst}
-  - \usepackage{float} # keep figures where there are in the text
-  - \floatplacement{figure}{H} # keep figures where there are in the text
+ - \usepackage{indentfirst}
+ - \usepackage{float} # keep figures where there are in the text
+ - \floatplacement{figure}{H} # keep figures where there are in the text
 ---
 
 # Цель работы
 
-Здесь приводится формулировка цели лабораторной работы. Формулировки
-цели для каждой лабораторной работы приведены в методических
-указаниях.
-
-Цель данного шаблона --- максимально упростить подготовку отчётов по
-лабораторным работам.  Модифицируя данный шаблон, студенты смогут без
-труда подготовить отчёт по лабораторным работам, а также познакомиться
-с основными возможностями разметки Markdown.
-
-# Задание
-
-Здесь приводится описание задания в соответствии с рекомендациями
-методического пособия и выданным вариантом.
-
-# Теоретическое введение
-
-Здесь описываются теоретические аспекты, связанные с выполнением работы.
-
-Например, в табл. @tbl:std-dir приведено краткое описание стандартных каталогов Unix.
-
-: Описание некоторых каталогов файловой системы GNU Linux {#tbl:std-dir}
-
-| Имя каталога | Описание каталога                                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------------------------------|
-| `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
-| `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
-| `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
-| `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
-| `/tmp`       | Временные файлы                                                                                                            |
-| `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
-
-Более подробно об Unix см. в [@gnu-doc:bash;@newham:2005:bash;@zarrelli:2017:bash;@robbins:2013:bash;@tannenbaum:arch-pc:ru;@tannenbaum:modern-os:ru].
+Приобретение практических навыков взаимодействия пользователя с системой посредством командной строки.
 
 # Выполнение лабораторной работы
 
-Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. @fig:001).
+1. Узнаем полный путь к домашнему каталогу и перейдем в каталог tmp и выведем его содержимое на экран
 
-![Название рисунка](image/placeimg_800_600_tech.jpg){#fig:001 width=70%}
+![Домашний каталог и содержание tmp](image/1.png){ #fig:001 width=90% }
 
-# Выводы
+2. Проверяем каталог /var/spool на наличие подкаталога cron, затем создадим новый каталог newdir
 
-Здесь кратко описываются итоги проделанной работы.
+![Проверка каталога на подкаталог cron](image/2.png){ #fig:002 width=90% }
 
-# Список литературы{.unnumbered}
+![Создание каталога newdir](image/3.png){ #fig:003 width=90% }
+
+3. Создаем три новых каталога одной командой
+
+![Создание новых каталогов](image/4.png){ #fig:004 width=90% }
+
+4. Теперь удалим созданные каталоги и каталог newdir из домашнего каталога
+
+![Удаление каталогов](image/5.png){ #fig:005 width=90% }
+
+5. С помощью команды man просмотрим подкаталоги, входящие в основной каталог
+
+![Подкаталог man](image/6.png){ #fig:006 width=90% }
+
+![Подкаталог cd](image/8.png){ #fig:008 width=90% }
+
+![Подкаталог ls](image/9.png){ #fig:009 width=90% }
+
+![Подкаталог mkdir](image/10.png){ #fig:010 width=90% }
+
+![Подкаталог rmdir](image/11.png){ #fig:011 width=90% }
+
+![Подкаталог rm](image/12.png){ #fig:012 width=90% }
+
+6. Просматриваем историю буфера команд консоли с помощью команды history 
+
+![Команда history](image/13.png){ #fig:013 width=90% }
+
+# Вывод
+
+Мы повторили основные команды интерфейса взаимодействия
+пользователя с системой Unix.
 
 ::: {#refs}
 :::
